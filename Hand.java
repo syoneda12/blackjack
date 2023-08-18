@@ -34,21 +34,30 @@ public class Hand {
         return hand.toString();
     }
 
+    public int getTotalValue() {
+        int total = 0;
+
+        for (Card card : hand) {
+            total += card.getRank().getValue();
+        }
+
+        return total;
+    }
+
     // public static void main(String[] args) {
-    //     Deck deck = new Deck();
-    //     Hand playerHand = new Hand();
+    // Deck deck = new Deck();
+    // Hand playerHand = new Hand();
 
-    //     deck.shuffle();
+    // deck.shuffle();
 
-    //     // 5枚のカードをドローして、プレイヤーの手に追加する
-    //     for (int i = 0; i < 5; i++) {
-    //         Card drawnCard = deck.draw();
-    //         playerHand.addCard(drawnCard);
-    //         System.out.println("Drew: " + drawnCard);
-    //     }
+    // // 5枚のカードをドローして、プレイヤーの手に追加する
+    // for (int i = 0; i < 5; i++) {
+    // Card drawnCard = deck.draw();
+    // playerHand.addCard(drawnCard);
+    // System.out.println("Drew: " + drawnCard);
+    // }
 
-    //     System.out.println("\nPlayer's hand:");
-    //     System.out.println(playerHand);
+    // System.out.println("\nPlayer's hand:");
+    // System.out.println(playerHand);
     // }
 }
-

@@ -39,6 +39,15 @@ public class Deck {
         return cards.toString();
     }
 
+    public void removeCard(Card.Suit suit, Card.Rank rank) {
+        for (Card card : cards) {
+            if (card.getRank() == rank && (suit == null || card.getSuit() == suit)) {
+                cards.remove(card);
+                return;
+            }
+        }
+    }
+
     // public static void main(String[] args) {
     // Deck deck = new Deck();
     // System.out.println("Original deck:");

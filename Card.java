@@ -22,9 +22,31 @@ public class Card {
 
     // カードの数字の列挙型
     public enum Rank {
-        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING;
+        ACE(1), // エースは1扱い
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(10),
+        QUEEN(10),
+        KING(10);
 
-        @Override
+        private final int value;
+
+        Rank(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        // 表示用
         public String toString() {
             switch (this) {
                 case ACE:
